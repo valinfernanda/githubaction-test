@@ -18,8 +18,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          DOCKER_BUILDKIT=1 sudo docker build -t ${{ secrets.DOCKER_USERNAME }}/githubaction-test:latest .
+          DOCKER_BUILDKIT=1 docker build -t ${{ secrets.DOCKER_USERNAME }}/githubaction-test:latest .
 
       - name: Push Docker image
         run: |
-          sudo docker push ${{ secrets.DOCKER_USERNAME }}/githubaction-test:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/githubaction-test:latest
